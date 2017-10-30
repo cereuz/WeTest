@@ -7,6 +7,7 @@ import android.support.test.runner.AndroidJUnit4;
 import android.support.test.uiautomator.UiDevice;
 
 import com.onezao.wetest.testutils.TestUse1026;
+import com.onezao.wetest.testutils.TestWork1026;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -25,9 +26,12 @@ public class uiauto {
     public void setUp(){
         instrumentation = InstrumentationRegistry.getInstrumentation();
         device = UiDevice.getInstance(instrumentation);
+
     }
     @Test
     public void test(){
-        TestUse1026.openAPP(context);
+        //TestUse1026.openAPP(context);
+        TestWork1026.findTitle(device);
+        TestWork1026.send1026(device);
     }
 }

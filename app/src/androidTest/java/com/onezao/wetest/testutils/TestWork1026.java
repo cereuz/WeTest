@@ -53,4 +53,13 @@ public class TestWork1026 {
 //            sendMessage.scroll(Direction.DOWN,0.75f,3000);
         }
     }
+
+    public static void findTitle(UiDevice device){
+//       UiObject2 Ftitle = device.findObject(By.text("TT"));
+
+        UiObject2  Ftitle =  device.findObject(By.res("com.tencent.mobileqq:id/relativeItem"));
+        if(Ftitle != null){
+            Ftitle.click();
+        }
+    }
 }
