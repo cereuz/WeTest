@@ -37,7 +37,7 @@ public class TestUse1026 {
     //找到并打开指定app
     public static void openAPP(Context context){
         context = InstrumentationRegistry.getInstrumentation().getContext();
-        Intent intent = context.getPackageManager().getLaunchIntentForPackage("com.gcs.mcj.chat");
+        Intent intent = context.getPackageManager().getLaunchIntentForPackage("com.tencent.mobileqq");
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         context.startActivity(intent);
     }
