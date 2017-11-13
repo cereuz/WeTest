@@ -6,6 +6,7 @@ import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 import android.support.test.uiautomator.UiDevice;
 
+import com.onezao.wetest.testutils.KedouTest;
 import com.onezao.wetest.testutils.TestUse1026;
 import com.onezao.wetest.testutils.TestWork1026;
 
@@ -30,8 +31,11 @@ public class uiauto {
     }
     @Test
     public void test(){
-        //TestUse1026.openAPP(context);
-        TestWork1026.findTitle(device);
-        TestWork1026.send1026(device);
+        TestUse1026.openAPP(context,"com.gcs.mcj.chat");
+        /*TestWork1026.findTitle(device);
+        TestWork1026.send1026(device);*/
+       // TestWork1026.findListViewItem(device);
+        TestUse1026.sleep(4000);
+        KedouTest.Kedou100(device);
     }
 }

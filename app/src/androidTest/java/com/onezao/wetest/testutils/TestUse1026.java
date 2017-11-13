@@ -35,10 +35,20 @@ public class TestUse1026 {
     }
 
     //找到并打开指定app
-    public static void openAPP(Context context){
+    public static void openAPP(Context context,String packageN){
         context = InstrumentationRegistry.getInstrumentation().getContext();
-        Intent intent = context.getPackageManager().getLaunchIntentForPackage("com.tencent.mobileqq");
+        Intent intent = context.getPackageManager().getLaunchIntentForPackage(packageN);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         context.startActivity(intent);
+    }
+
+    //刷新APP页面
+    public static void refreshAPP(Context context){
+
+    }
+
+    //下拉APP刷新
+    public static void pullToRefresh(){
+
     }
 }

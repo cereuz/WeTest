@@ -1,8 +1,10 @@
 package com.onezao.wetest.testutils;
 
+import android.content.Context;
 import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject2;
+import android.widget.Toast;
 
 /**
  * 具体的操作代码
@@ -60,6 +62,15 @@ public class TestWork1026 {
         UiObject2  Ftitle =  device.findObject(By.res("com.tencent.mobileqq:id/relativeItem"));
         if(Ftitle != null){
             Ftitle.click();
+        }
+    }
+
+    //找到listView的某一个item
+    public static void findListViewItem(UiDevice device){
+//        UiObject2  noteList = device.findObject(By.textContains("喵喵"));
+        UiObject2  noteList = device.findObject(By.res("com.tencent.mobileqq:id/title"));
+        if(noteList != null){
+            noteList.click();
         }
     }
 }
