@@ -8,6 +8,7 @@ import android.support.test.runner.AndroidJUnit4;
 import android.support.test.uiautomator.UiDevice;
 
 import com.onezao.wetest.testutils.KedouTest;
+import com.onezao.wetest.testutils.ShareLoan2_0;
 import com.onezao.wetest.testutils.TestUse1026;
 import com.onezao.wetest.testutils.TestWork1026;
 
@@ -43,12 +44,22 @@ public class uiauto {
     }
     @Test
     public void test(){
-        TestUse1026.openAPP(context,"com.gcs.mcj.chat");
-        /*TestWork1026.findTitle(device);
-        TestWork1026.send1026(device);*/
-       // TestWork1026.findListViewItem(device);
-        TestUse1026.sleep(4000);
-     //   KedouTest.Kedou100(device);
+        //调用测试共享现金的方法
+        testLoan2_0();
+       /* //打开蝌蚪APP
+        TestUse1026.openAPP(context,"com.gcs.mcj.chat");*/
         TestUse1026.snapPic(device);
+    }
+
+      //测试共享现金2.0
+    public void testLoan2_0(){
+        //打开共享现金APP
+        TestUse1026.openAPP(ShareLoan2_0.packageName);
+       /* //启动页，只在第一次安装的时候才调用这个方法
+        ShareLoan2_0.slogan(device);*/
+       //从启动页到借款页面，需要一点缓冲时间。不然会空指针异常。
+        TestUse1026.sleep(3000);
+       //点击顶部的可借金额
+        ShareLoan2_0.borrow(device);
     }
 }
