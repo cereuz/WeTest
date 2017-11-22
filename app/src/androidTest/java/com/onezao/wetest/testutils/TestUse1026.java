@@ -2,8 +2,13 @@ package com.onezao.wetest.testutils;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Environment;
 import android.support.test.InstrumentationRegistry;
+import android.support.test.uiautomator.UiDevice;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -50,5 +55,37 @@ public class TestUse1026 {
     //下拉APP刷新
     public static void pullToRefresh(){
 
+    }
+
+    //复制文件
+    public static long copyFile(File f1,File f2) throws Exception{
+        long time=new Date().getTime();
+        int length=1024;
+        FileInputStream fis=new FileInputStream(f1);
+        FileOutputStream fos=new FileOutputStream(f2);
+        byte[] buffer=new byte[length];
+        while(true){
+            int ins=fis.read(buffer);
+            if(ins==-1){
+                fis.close();
+                fos.flush();
+                fos.close();
+                return new Date().getTime()-time;
+            }else
+                fos.write(buffer,0,ins);
+        }
+    }
+
+    //APP截图
+    public static void snapPic(UiDevice device){
+        // Simulate a short press on the HOME button.
+        /*device.pressHome() ;
+        sleep(1000) ;*/
+        //创建文件
+        String path = Environment.getExternalStorageDirectory().getPath() + "/cool.png";
+//        File f = new File("/data/local/tmp/Screenshot.png") ;
+        device.takeScreenshot(new File("/mnt/sdcard/Screenshot.png") , 0, 50) ;
+        device.takeScreenshot(new File(path));
+        sleep(2000);
     }
 }
