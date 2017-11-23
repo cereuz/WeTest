@@ -5,13 +5,16 @@ import android.content.Intent;
 import android.os.Environment;
 import android.os.RemoteException;
 import android.support.test.InstrumentationRegistry;
+import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiDevice;
+import android.support.test.uiautomator.UiObject2;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by zz on 2017/10/26.
@@ -99,5 +102,16 @@ public class TestUse1026 {
     public static int getScreenWidth(UiDevice device){
         int displayWidth =device.getDisplayWidth();
         return  displayWidth;
+    }
+
+    //封装找到控件的方法
+    public static UiObject2 getUiObject2(UiDevice device,String resId) {
+        UiObject2 UiOb2 = device.findObject(By.res(resId));
+        return  UiOb2;
+    }
+    //封装找到多个相同控件的方法
+    public static List<UiObject2> getUiObject2s(UiDevice device,String resId) {
+        List<UiObject2>  UiOb2s = device.findObjects(By.res(resId));
+        return  UiOb2s;
     }
 }

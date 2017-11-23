@@ -53,13 +53,22 @@ public class uiauto {
 
       //测试共享现金2.0
     public void testLoan2_0(){
+        //从启动页到借款页面，需要一点缓冲时间。不然会空指针异常。页面切换之间都需要给出缓冲时间。
         //打开共享现金APP
         TestUse1026.openAPP(ShareLoan2_0.packageName);
-       /* //启动页，只在第一次安装的时候才调用这个方法
+ /*     TestUse1026.sleep(3000);
+        //启动页，只在第一次安装的时候才调用这个方法
         ShareLoan2_0.slogan(device);*/
-       //从启动页到借款页面，需要一点缓冲时间。不然会空指针异常。
-        TestUse1026.sleep(3000);
-       //点击顶部的可借金额
+
+
+/*     TestUse1026.sleep(3000);
+      //首页的操作
+        ShareLoan2_0.prepare(device);*/
+/*   //点击进入借款页面
         ShareLoan2_0.borrow(device);
+        TestUse1026.sleep(3000);*/
+        TestUse1026.sleep(3000);
+        //点击进入发现页面
+        ShareLoan2_0.discover(device);
     }
 }
