@@ -11,7 +11,9 @@ import android.support.test.uiautomator.UiObject2;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -21,8 +23,11 @@ import java.util.List;
  */
 
 public class TestUse1026 {
+    //Zao应用的包名
+    public static String PACKAGENAMEZAO = "com.onezao.onezao.zao";
+
     //睡眠，延后几秒钟发送
-    public static void sleep(int mint){
+    public static void sleep(int mint) {
         try {
             Thread.sleep(mint);
         } catch (InterruptedException e) {
@@ -32,10 +37,10 @@ public class TestUse1026 {
 
 
     //获取系统当前时间
-    public static String getSystemTime(){
-        SimpleDateFormat formatter    =   new SimpleDateFormat ("yyyy年MM月dd日 HH:mm:ss");
-        Date curDate    =   new Date(System.currentTimeMillis());//获取当前时间
-        String    str    =    formatter.format(curDate);
+    public static String getSystemTime() {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+        Date curDate = new Date(System.currentTimeMillis());//获取当前时间
+        String str = formatter.format(curDate);
         //获取时间，
 /*      SimpleDateFormat    sDateFormat    =   new SimpleDateFormat("yyyy-MM-dd    hh:mm:ss");
         String  date    =    sDateFormat.format(new java.util.Date());*/
@@ -43,7 +48,7 @@ public class TestUse1026 {
     }
 
     //找到并打开指定app
-    public static void openAPP(String packageN){
+    public static void openAPP(String packageN) {
         Context context = InstrumentationRegistry.getInstrumentation().getContext();
         Intent intent = context.getPackageManager().getLaunchIntentForPackage(packageN);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -51,44 +56,47 @@ public class TestUse1026 {
     }
 
     //刷新APP页面
-    public static void refreshAPP(Context context){
+    public static void refreshAPP(Context context) {
 
     }
 
     //下拉APP刷新
-    public static void pullToRefresh(){
+    public static void pullToRefresh() {
 
     }
 
     //复制文件
-    public static long copyFile(File f1,File f2) throws Exception{
-        long time=new Date().getTime();
-        int length=1024;
-        FileInputStream fis=new FileInputStream(f1);
-        FileOutputStream fos=new FileOutputStream(f2);
-        byte[] buffer=new byte[length];
-        while(true){
-            int ins=fis.read(buffer);
-            if(ins==-1){
-                fis.close();
-                fos.flush();
-                fos.close();
-                return new Date().getTime()-time;
-            }else
-                fos.write(buffer,0,ins);
+    public static long copyFile(String p1, String p2) {
+        long time = new Date().getTime();
+        int length = 1024;
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream(new File(p1));
+            FileOutputStream fos = new FileOutputStream(new File(p2));
+            byte[] buffer = new byte[length];
+            while (true) {
+                int ins = fis.read(buffer);
+                if (ins == -1) {
+                    fis.close();
+                    fos.flush();
+                    fos.close();
+                    return new Date().getTime() - time;
+                } else {
+                    fos.write(buffer, 0, ins);
+                }
+
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return -1;
         }
     }
 
-    //APP截图,暂时未实现
-    public static void snapPic(UiDevice device){
-        // Simulate a short press on the HOME button.
-        /*device.pressHome() ;
-        sleep(1000) ;*/
-        //创建文件
-        String path = Environment.getExternalStorageDirectory().getPath() + "/cool.png";
-//        File f = new File("/data/local/tmp/Screenshot.png") ;
-        device.takeScreenshot(new File("/mnt/sdcard/Screenshot.png") , 0, 50) ;
-        device.takeScreenshot(new File(path));
+
+    //APP截图,
+    public static void snapPic(UiDevice device,String fileName){
+        String path2 = Environment.getExternalStorageDirectory().getPath()+"/"+fileName+TestUse1026.getSystemTime()+".png";
+        device.takeScreenshot(new File(path2));
         sleep(2000);
     }
 

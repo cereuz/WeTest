@@ -46,4 +46,5 @@ dependencies {
     compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/rules-0.3-release-no-dep.jar')
     compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/runner-0.3-release-no-dep.jar')
     compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/uiautomator-v18-2.1.1-release-no-dep.jar')
+    compile files('libs/spoon-client-1.7.1.jar')
 }

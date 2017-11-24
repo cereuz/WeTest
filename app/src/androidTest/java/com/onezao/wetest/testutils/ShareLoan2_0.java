@@ -47,14 +47,38 @@ public class ShareLoan2_0 {
     public static String loan_Btn = "com.gcs.wang.loan:id/loan_Btn";
     //点击底部的重复使用View  ，  【发现页面】的item_IV  使用的是同样的ID
     public static String item_IV = "com.gcs.wang.loan:id/item_IV";
-    //登录界面的左上角返回按钮
+    //登录界面的左上角返回按钮；身份证识别，返回按钮
     public static String rlyt_left = "com.gcs.wang.loan:id/rlyt_left";
     //登录界面的“下一步”按钮
     public static String btn_normal = "com.gcs.wang.loan:id/btn_normal";
 
 
+
     //【四、发现】页面
     //【五、个人中心】
+    //个人中心的头像
+    public static String head_IV = "com.gcs.wang.loan:id/head_IV";
+    //个人中心的昵称
+    public static String nickName_TV = "com.gcs.wang.loan:id/nickName_TV";
+    //个人中心右上角的消息图片
+    public static String message_RL = "com.gcs.wang.loan:id/message_RL";
+    //当前应还金额
+    public static String repay_Money_TV = "com.gcs.wang.loan:id/repay_Money_TV";
+    //当前应还日期
+    public static String repay_Date_TV = "com.gcs.wang.loan:id/repay_Date_TV";
+    //身份证识别页面，识别框
+    public static String bg_ImageView = "com.gcs.wang.loan:id/bg_ImageView";
+    //还款倒计时
+    public static String repaymentData_FTV = "com.gcs.wang.loan:id/repaymentData_FTV";
+    //已绑定银行卡
+    public static String bankIsBind_TV = "com.gcs.wang.loan:id/bankIsBind_TV";
+    //主动还款
+    public static String repayMoney_TV = "com.gcs.wang.loan:id/repayMoney_TV";
+    //我要续期
+    public static String continueMoney_TV = "com.gcs.wang.loan:id/continueMoney_TV";
+
+
+
 
 
 
@@ -155,7 +179,24 @@ public class ShareLoan2_0 {
         UiObject2 loan_Btn = device.findObject(By.res(ShareLoan2_0.loan_Btn));
         loan_Btn.click();
 
-        //未登录情况下，点击立即借款，进入登录界面
+        //未登录情况下，点击立即借款，进入登录界面，然后返回
+        login_out(device);
+
+
+        //间隔2秒钟
+        TestUse1026.sleep(2000);
+        //点击底部的loan_RecyclerView
+        List<UiObject2> list_item_IV = device.findObjects(By.res(ShareLoan2_0.item_IV));
+        for (UiObject2 item_IV:list_item_IV) {
+            item_IV.click();
+            //间隔2秒钟
+            TestUse1026.sleep(5000);
+        }
+
+    }
+
+    //【登录界面的返回操作】未登录情况下，点击立即借款，进入登录界面，然后返回
+    private static void login_out(UiDevice device) {
         //间隔2秒钟
         TestUse1026.sleep(2000);
         //不输入信息，直接点击下一步
@@ -168,17 +209,6 @@ public class ShareLoan2_0 {
         //点击左上角的返回按钮
         UiObject2 rlyt_left = device.findObject(By.res(ShareLoan2_0.rlyt_left));
         rlyt_left.click();
-
-        //间隔2秒钟
-        TestUse1026.sleep(2000);
-        //点击底部的loan_RecyclerView
-        List<UiObject2> list_item_IV = device.findObjects(By.res(ShareLoan2_0.item_IV));
-        for (UiObject2 item_IV:list_item_IV) {
-            item_IV.click();
-            //间隔2秒钟
-            TestUse1026.sleep(5000);
-        }
-
     }
 
     //-----------------------【四、发现】发现页面的点击事件-----------------------------------------
@@ -203,7 +233,63 @@ public class ShareLoan2_0 {
     public static void personal(UiDevice device){
         //点击个人中心
         TestUse1026.getUiObject2(device, my_IV).click();
-        //间隔一秒钟点击一次
+        //间隔一秒钟
         TestUse1026.sleep(1000);
+        //点击个人中心的头像
+        TestUse1026.getUiObject2(device,head_IV).click();
+        TestUse1026.sleep(1000);
+        //进入登录界面，然后返回。
+        login_out(device);
+        //间隔一秒钟
+        TestUse1026.sleep(1000);
+        //点击昵称位置
+        TestUse1026.getUiObject2(device,nickName_TV).click();
+        //进入登录界面，然后返回。
+        login_out(device);
+        //间隔一秒钟
+        TestUse1026.sleep(1000);
+        //点击右上角的消息按钮
+        TestUse1026.getUiObject2(device,message_RL).click();
+        //间隔几秒钟
+        TestUse1026.sleep(2000);
+        //点击当前应还金额
+        TestUse1026.getUiObject2(device,repay_Money_TV).click();
+        //间隔几秒钟
+        TestUse1026.sleep(2000);
+        //点击身份证识别框
+        TestUse1026.getUiObject2(device,bg_ImageView).click();
+        //间隔几秒钟
+        TestUse1026.sleep(2000);
+        //点击身份证识别框的返回按钮
+        TestUse1026.getUiObject2(device,rlyt_left).click();
+        //间隔几秒钟
+        TestUse1026.sleep(2000);
+        //点击当前应还日期
+        TestUse1026.getUiObject2(device,repay_Date_TV).click();
+        //间隔几秒钟
+        TestUse1026.sleep(2000);
+        //点击身份证识别框
+        TestUse1026.getUiObject2(device,bg_ImageView).click();
+        //间隔几秒钟
+        TestUse1026.sleep(2000);
+        //点击身份证识别框的返回按钮
+        TestUse1026.getUiObject2(device,rlyt_left).click();
+        //间隔几秒钟
+        TestUse1026.sleep(2000);
+        //点击还款倒计时
+       TestUse1026.getUiObject2(device,repaymentData_FTV).click();
+        //间隔几秒钟
+        TestUse1026.sleep(2000);
+        //已绑定银行卡
+        TestUse1026.getUiObject2(device,bankIsBind_TV).click();
+        //间隔几秒钟
+        TestUse1026.sleep(2000);
+        //主动还款
+        TestUse1026.getUiObject2(device,repayMoney_TV).click();
+        //间隔几秒钟
+        TestUse1026.sleep(2000);
+        //我要续期
+        TestUse1026.getUiObject2(device,continueMoney_TV).click();
+
     }
 }
