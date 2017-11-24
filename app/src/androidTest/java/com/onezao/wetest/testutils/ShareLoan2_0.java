@@ -131,13 +131,13 @@ public class ShareLoan2_0 {
         UiObject2 money_can_borrow = device.findObject(By.res(ShareLoan2_0.money_can_borrow));
         //直接滑动屏幕，来切换借款额度
         //第三个参数：speed	int: The speed at which to perform this gesture in pixels per second.
-        money_can_borrow.scroll(Direction.LEFT, 20f,200);
+        money_can_borrow.scroll(Direction.LEFT, 6f,200);
         TestUse1026.sleep(2000);
         //获取屏幕位置，同一个位置多次点击
         Rect viewRect = money_can_borrow.getVisibleBounds();
         int x = viewRect.right;
         int y = viewRect.bottom;
-        for(int i = 0;i < 10;i++){
+        for(int i = 0;i < 6;i++){
             device.click(x/2-x/5,y-20);
             //间隔一秒钟点击一次
             TestUse1026.sleep(1000);
@@ -186,17 +186,13 @@ public class ShareLoan2_0 {
         //间隔2秒钟
         TestUse1026.sleep(2000);
         //点击底部的loan_RecyclerView
-        List<UiObject2> list_item_IV = device.findObjects(By.res(ShareLoan2_0.item_IV));
-        for (UiObject2 item_IV:list_item_IV) {
-            item_IV.click();
-            //间隔2秒钟
-            TestUse1026.sleep(5000);
-        }
+        ShareLoan2_0_utils.loan_RecyclerViewMethod(device);
+
 
     }
 
     //【登录界面的返回操作】未登录情况下，点击立即借款，进入登录界面，然后返回
-    private static void login_out(UiDevice device) {
+    public static void login_out(UiDevice device) {
         //间隔2秒钟
         TestUse1026.sleep(2000);
         //不输入信息，直接点击下一步
@@ -212,22 +208,25 @@ public class ShareLoan2_0 {
     }
 
     //-----------------------【四、发现】发现页面的点击事件-----------------------------------------
-    public static void discover(UiDevice device){
+    public static void discover(UiDevice device) {
         //点击发现
         TestUse1026.getUiObject2(device, btn_1).click();
         //间隔一秒钟点击一次
         TestUse1026.sleep(1000);
 
-        for(int i=0;i<6;i++){
-        //点击发现页面的各个模块
-       List<UiObject2> uiOb2s =  TestUse1026.getUiObject2s(device,item_IV);
-        for(UiObject2 uiOb2 : uiOb2s){
-             uiOb2.click();
-            //间隔一秒钟点击一次
-            TestUse1026.sleep(3000);
-        }
-      }
-    }
+
+ /*           //点击发现页面的各个模块  !!!!!!!!!!!!!
+            List<UiObject2> uiOb2s = TestUse1026.getUiObject2s(device, item_IV);
+            for (int m=0;m< uiOb2s.size(); m++) {
+                //间隔几秒钟
+                TestUse1026.sleep(ShareLoan2_0_utils.theSecond);
+                uiOb2s.get(m).click();
+                //间隔几秒钟
+                TestUse1026.sleep(ShareLoan2_0_utils.theSecond);
+                TestUse1026.getUiObject2(device, ShareLoan2_0.rlyt_left);
+                }*/
+            }
+
 
     //---------------------【五、个人中心】个人中心的点击事件--------------------------------------
     public static void personal(UiDevice device){

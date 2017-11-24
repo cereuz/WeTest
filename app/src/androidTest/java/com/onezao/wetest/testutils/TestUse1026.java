@@ -25,6 +25,7 @@ import java.util.List;
 public class TestUse1026 {
     //Zao应用的包名
     public static String PACKAGENAMEZAO = "com.onezao.onezao.zao";
+    public static String BTN_ALLOW = "com.huawei.systemmanager:id/btn_allow";
 
     //睡眠，延后几秒钟发送
     public static void sleep(int mint) {
@@ -95,7 +96,7 @@ public class TestUse1026 {
 
     //APP截图,
     public static void snapPic(UiDevice device,String fileName){
-        String path2 = Environment.getExternalStorageDirectory().getPath()+"/"+fileName+TestUse1026.getSystemTime()+".png";
+        String path2 = Environment.getExternalStorageDirectory().getPath()+"/"+ fileName.substring(fileName.lastIndexOf(".")+1,fileName.length())+TestUse1026.getSystemTime()+".png";
         device.takeScreenshot(new File(path2));
         sleep(2000);
     }
@@ -121,5 +122,10 @@ public class TestUse1026 {
     public static List<UiObject2> getUiObject2s(UiDevice device,String resId) {
         List<UiObject2>  UiOb2s = device.findObjects(By.res(resId));
         return  UiOb2s;
+    }
+
+    //运去读取位置信息
+    public static void btnAllow(UiDevice device){
+        TestUse1026.getUiObject2(device,BTN_ALLOW);
     }
 }
