@@ -126,6 +126,8 @@ public class TestUse1026 {
 
     //运去读取位置信息
     public static void btnAllow(UiDevice device){
-        TestUse1026.getUiObject2(device,BTN_ALLOW);
+        if(TestUse1026.getUiObject2(device,BTN_ALLOW) != null){
+        TestUse1026.getUiObject2(device,BTN_ALLOW).click();
+      }
     }
 }

@@ -10,6 +10,7 @@ import android.support.test.uiautomator.UiDevice;
 
 import com.onezao.wetest.testutils.KedouTest;
 import com.onezao.wetest.testutils.ShareLoan2_0;
+import com.onezao.wetest.testutils.ShareLoan2_0_utils;
 import com.onezao.wetest.testutils.TestUse1026;
 import com.onezao.wetest.testutils.TestWork1026;
 import com.squareup.spoon.Spoon;
@@ -46,31 +47,29 @@ public class uiauto {
         TestUse1026.openAPP(context,"com.gcs.mcj.chat");*/
     }
 
-      //测试共享现金2.0
+      //测试共享现金2.0  ，【未登录状态】
     public void testLoan2_0(){
         //从启动页到借款页面，需要一点缓冲时间。不然会空指针异常。页面切换之间都需要给出缓冲时间。
         //打开共享现金APP
-        TestUse1026.openAPP(ShareLoan2_0.packageName);
-/*        //打开Zao
-        TestUse1026.openAPP(TestUse1026.PACKAGENAMEZAO);*//*
-      TestUse1026.sleep(3000);
+      TestUse1026.openAPP(ShareLoan2_0.packageName);
+      TestUse1026.sleep(ShareLoan2_0_utils.THREESECOND);
         //允许读取位置信息。
         TestUse1026.btnAllow(device);
         //启动页，只在第一次安装的时候才调用这个方法
         ShareLoan2_0.slogan(device);
 
-     TestUse1026.sleep(3000);
+     TestUse1026.sleep(ShareLoan2_0_utils.THREESECOND);
       //首页的操作
-        ShareLoan2_0.prepare(device);*/
-        TestUse1026.sleep(3000);
+        ShareLoan2_0.prepare(device);
+        TestUse1026.sleep(ShareLoan2_0_utils.THREESECOND);
      //点击进入借款页面
         ShareLoan2_0.borrow(device);
-        TestUse1026.sleep(3000);
+        TestUse1026.sleep(ShareLoan2_0_utils.THREESECOND);
        //点击进入发现页面
         ShareLoan2_0.discover(device);
-        TestUse1026.sleep(2000);
+        TestUse1026.sleep(ShareLoan2_0_utils.THREESECOND);
         //截图功能
-        TestUse1026.snapPic(device,TestUse1026.PACKAGENAMEZAO);
+        TestUse1026.snapPic(device,ShareLoan2_0.packageName);
         //点击进入个人中心
         ShareLoan2_0.personal(device);
     }

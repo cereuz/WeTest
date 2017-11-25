@@ -17,7 +17,9 @@ import java.util.List;
 
 public class ShareLoan2_0_utils {
     //间隔时间的确定
+    public static int oneSecond = 1000;
     public static int theSecond = 2000;
+    public static int THREESECOND = 3000;
     public static int longSecond = 6000;
     //定义可以滑动的对象
     public static UiScrollable uis ;
@@ -46,7 +48,7 @@ public class ShareLoan2_0_utils {
                 int y = newBonusRect.bottom;
                     device.click(x/2,y-20);
                     //间隔几秒钟
-                    TestUse1026.sleep(theSecond);
+                    TestUse1026.sleep(longSecond);
                   //退出登录界面
                  ShareLoan2_0.login_out(device);
                 //间隔几秒钟
