@@ -1,11 +1,10 @@
-package com.onezao.wetest.testutils;
+package com.onezao.wetest.ShareLoan2_0_1111;
 
 import android.graphics.Rect;
 import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.Direction;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject2;
-import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.support.test.uiautomator.UiScrollable;
 import android.support.test.uiautomator.UiSelector;
 

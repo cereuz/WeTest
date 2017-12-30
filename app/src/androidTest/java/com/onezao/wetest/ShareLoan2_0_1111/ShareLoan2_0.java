@@ -1,6 +1,5 @@
-package com.onezao.wetest.testutils;
+package com.onezao.wetest.ShareLoan2_0_1111;
 
-import android.content.Context;
 import android.graphics.Rect;
 import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.Direction;
@@ -214,23 +213,20 @@ public class ShareLoan2_0 {
         //点击底部的loan_RecyclerView
         ShareLoan2_0_utils.loan_RecyclerViewMethod(device);
 
-
     }
 
     //【登录界面的返回操作】未登录情况下，点击立即借款，进入登录界面，然后返回
     public static void login_out(UiDevice device) {
-        //间隔2秒钟
-        TestUse1026.sleep(ShareLoan2_0_utils.theSecond);
-        //不输入信息，直接点击下一步
-        UiObject2 btn_normal = device.findObject(By.res(ShareLoan2_0.btn_normal));
-        btn_normal.click();
-
-        //间隔2秒钟
-        TestUse1026.sleep(ShareLoan2_0_utils.theSecond);
-
-        //点击左上角的返回按钮
-        UiObject2 rlyt_left = device.findObject(By.res(ShareLoan2_0.rlyt_left));
-        rlyt_left.click();
+            //间隔2秒钟
+            TestUse1026.sleep(ShareLoan2_0_utils.longSecond);
+            //不输入信息，直接点击下一步
+            UiObject2 btn_normal = device.findObject(By.res(ShareLoan2_0.btn_normal));
+            btn_normal.click();
+            //间隔2秒钟
+            TestUse1026.sleep(ShareLoan2_0_utils.theSecond);
+            //点击左上角的返回按钮
+            UiObject2 rlyt_left = device.findObject(By.res(ShareLoan2_0.rlyt_left));
+            rlyt_left.click();
     }
 
     //-----------------------【四、发现】发现页面的点击事件-----------------------------------------
@@ -290,10 +286,10 @@ public class ShareLoan2_0 {
         TestUse1026.sleep(ShareLoan2_0_utils.longSecond);
         //点击当前应还金额
         TestUse1026.getUiObject2(device,repay_Money_TV).click();
-        //允许读取摄像头。
-        TestUse1026.btnAllow(device);
         //间隔几秒钟
         TestUse1026.sleep(ShareLoan2_0_utils.longSecond);
+        //允许读取摄像头。
+        TestUse1026.btnAllow(device);
         //点击身份证识别框
         TestUse1026.getUiObject2(device,facedetect_sfv_preview).click();
         //间隔几秒钟
@@ -341,10 +337,12 @@ public class ShareLoan2_0 {
         TestUse1026.getUiObject2(device,ll_bankcard).click();
         //借款记录
         TestUse1026.getUiObject2(device,ll_loan_record).click();
-        //自动续期
+/*        //自动续期
         TestUse1026.getUiObject2(device,ll_autoxuqi).click();
-        TestUse1026.sleep(ShareLoan2_0_utils.THREESECOND);
+        TestUse1026.sleep(ShareLoan2_0_utils.longSecond);
         login_out(device);
+        TestUse1026.sleep(ShareLoan2_0_utils.theSecond);
+        login_out(device);*/
         TestUse1026.sleep(ShareLoan2_0_utils.theSecond);
         //邀请有礼
         TestUse1026.getUiObject2(device,ll_invite).click();
@@ -352,7 +350,7 @@ public class ShareLoan2_0 {
         TestUse1026.getUiObject2(device,ll_yhjuan).click();
         TestUse1026.sleep(ShareLoan2_0_utils.THREESECOND);
         login_out(device);
-        TestUse1026.sleep(ShareLoan2_0_utils.theSecond);
+        TestUse1026.sleep(ShareLoan2_0_utils.THREESECOND);
         //我的钱包
         TestUse1026.getUiObject2(device,ll_mypurse).click();
         //帮助中心
@@ -369,6 +367,5 @@ public class ShareLoan2_0 {
         TestUse1026.getUiObject2(device,ll_kefurexian).click();
         TestUse1026.sleep(ShareLoan2_0_utils.theSecond);
         TestUse1026.getUiObject2(device,btn_pos).click();
-
     }
 }

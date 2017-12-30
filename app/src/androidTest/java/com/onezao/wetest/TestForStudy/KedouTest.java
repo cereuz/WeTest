@@ -1,8 +1,10 @@
-package com.onezao.wetest.testutils;
+package com.onezao.wetest.TestForStudy;
 
 import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject2;
+
+import com.onezao.wetest.ShareLoan2_0_1111.TestUse1026;
 
 /**
  * Created by zneo on 2017/11/13.

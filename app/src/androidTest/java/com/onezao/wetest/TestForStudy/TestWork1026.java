@@ -1,10 +1,10 @@
-package com.onezao.wetest.testutils;
+package com.onezao.wetest.TestForStudy;
 
-import android.content.Context;
 import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject2;
-import android.widget.Toast;
+
+import com.onezao.wetest.ShareLoan2_0_1111.TestUse1026;
 
 /**
  * 具体的操作代码

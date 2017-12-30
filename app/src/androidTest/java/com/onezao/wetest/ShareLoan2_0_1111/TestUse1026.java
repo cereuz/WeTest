@@ -1,9 +1,8 @@
-package com.onezao.wetest.testutils;
+package com.onezao.wetest.ShareLoan2_0_1111;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Environment;
-import android.os.RemoteException;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiDevice;
@@ -11,7 +10,6 @@ import android.support.test.uiautomator.UiObject2;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -26,6 +24,8 @@ public class TestUse1026 {
     //Zao应用的包名
     public static String PACKAGENAMEZAO = "com.onezao.onezao.zao";
     public static String BTN_ALLOW = "com.huawei.systemmanager:id/btn_allow";
+    //延迟时间
+    public static int THREESECOND = 1000;
 
     //睡眠，延后几秒钟发送
     public static void sleep(int mint) {
@@ -115,11 +115,13 @@ public class TestUse1026 {
 
     //封装找到控件的方法
     public static UiObject2 getUiObject2(UiDevice device,String resId) {
+        TestUse1026.sleep(TestUse1026.THREESECOND);
         UiObject2 UiOb2 = device.findObject(By.res(resId));
         return  UiOb2;
     }
     //封装找到多个相同控件的方法
     public static List<UiObject2> getUiObject2s(UiDevice device,String resId) {
+        TestUse1026.sleep(TestUse1026.THREESECOND);
         List<UiObject2>  UiOb2s = device.findObjects(By.res(resId));
         return  UiOb2s;
     }
