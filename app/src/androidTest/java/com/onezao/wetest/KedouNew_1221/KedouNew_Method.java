@@ -13,4 +13,18 @@ public class KedouNew_Method {
         int nextInt = random.nextInt(seed);
         return nextInt;
     }
-}
+
+        //返回手机号码
+        public static String KedouNew_getPhone() {
+            String number = "1";//定义电话号码以139开头
+            for (int i = 0; i < 9; i++) {//9代表循环九次，产生九个随机号码
+                Random random = new Random();//定义random，产生随机数
+                for (int j = 0; j < 10; j++) {
+                    //生成0~9 随机数
+                    number += random.nextInt(9);
+                }
+            }
+            return  number;
+        }
+
+    }

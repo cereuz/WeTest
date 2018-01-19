@@ -9,9 +9,9 @@ public class KedouNew_Strings {
     public static String KEDOUPACAKAGE = "com.gcs.mcj.chat";
     //定义指定的几个蝌蚪号
     public static int[]  kedouID_arr = {987212905,982077162,964082747,967983139,983882847,983441167,937611877};
-    //引导页
+    //【零】引导页
     public static String viewpager = "com.gcs.mcj.chat:id/viewpager";
-    //底部的tab栏目，一共四个
+    //【壹】首页   底部的tab栏目，一共四个
     public static String tab_1 = "com.gcs.mcj.chat:id/tab_1";
     public static String tab_2 = "com.gcs.mcj.chat:id/tab_2";
     public static String tab_3 = "com.gcs.mcj.chat:id/tab_3";
@@ -32,6 +32,8 @@ public class KedouNew_Strings {
     public static String scrollView = "com.gcs.mcj.chat:id/scrollView";
     //用户详细信息部分
     public static String details_info = "com.gcs.mcj.chat:id/details_info";
+    //相册 列表
+    public static String details_list_img = "com.gcs.mcj.chat:id/details_list_img";
     //视频部分
     public static String head = "com.gcs.mcj.chat:id/head";
     public static String start = "com.gcs.mcj.chat:id/start";
@@ -47,7 +49,15 @@ public class KedouNew_Strings {
     public static String new_person = "com.gcs.mcj.chat:id/new_person";
     public static String active = "com.gcs.mcj.chat:id/active";
     //轮播图的详情页
-    public static String webView = "com.gcs.mcj.chat:id/webView";
-    public static String WebView = "android.webkit.WebView";
+    public static String content = "android:id/content";
+
+    //登录注册页面
+    //账号，输入手机号
+    public static String et_phone = "com.gcs.mcj.chat:id/et_phone";
+
+    //【四】个人中心      的设置按钮
+    public static String setting = "com.gcs.mcj.chat:id/setting";
+    public static String logout = "com.gcs.mcj.chat:id/logout";
+
 
 }

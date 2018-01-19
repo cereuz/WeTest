@@ -4,13 +4,8 @@ import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.Direction;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject2;
-import android.widget.Toast;
-
 import com.onezao.wetest.testutils.StringUtils;
 import com.onezao.wetest.testutils.TestUse;
-
-import org.junit.Test;
-
 import java.util.List;
 
 import static android.support.test.InstrumentationRegistry.getContext;
@@ -77,36 +72,12 @@ public class KedouNew_unLogin {
             TestUse.getUiObject2(device, KedouNew_Strings.searchButton).click();
 
             TestUse.getUiObject2(device, KedouNew_Strings.search_editText).setText(String.valueOf(KedouNew_Strings.kedouID_arr[i]));
+            TestUse.sleep(StringUtils.ONESECOND);
             TestUse.getUiObject2(device, KedouNew_Strings.searchButton).click();
             TestUse.getUiObject2(device, KedouNew_Strings.icon).click();
 
-            //选中个人详情页面，上下滑动，查看信息     这个页面内容比较多，需要缓冲时间
-            TestUse.sleep(StringUtils.THREESECOND);
-            //第三个参数：speed	int: The speed at which to perform this gesture in pixels per second.
-            TestUse.getUiObject2(device, KedouNew_Strings.scrollView).scroll(Direction.DOWN, 2f, 200);   //向上滑动;
-            TestUse.getUiObject2(device, KedouNew_Strings.details_info).scroll(Direction.UP, 5f, 200);   //向上滑动;
-            //点击个人资料页面  顶部的视频
-            TestUse.getUiObject2(device, KedouNew_Strings.head).click();
-            TestUse.sleep(StringUtils.TWENTYSECOND);
-            UiObject2 search_start = TestUse.getUiObject2(device, KedouNew_Strings.start);
-            if (search_start != null) {
-                //预留一些时间，查看视频
-                search_start.click();
-                TestUse.sleep(StringUtils.TWENTYSECOND);
-                device.pressBack();
-            }
+            dataPage(device);
 
-            //如果相册有图片，依次点击图片
-            UiObject2 searchPhoto = TestUse.getUiObject2(device, KedouNew_Strings.photo);
-            if (searchPhoto != null) {
-                searchPhoto.click();
-                TestUse.getUiObject2(device, KedouNew_Strings.rc_view_pager).scroll(Direction.LEFT, 6f, 200);
-                TestUse.getUiObject2(device, KedouNew_Strings.rc_view_pager).scroll(Direction.RIGHT, 6f, 200);
-                //如果有相册，就返回一次。返回个人资料页
-                TestUse.getUiObject2(device, KedouNew_Strings.back).click();
-            }
-            //点击个人资料页的返回按钮，返回首页
-            TestUse.getUiObject2(device, KedouNew_Strings.back).click();
             TestUse.getUiObject2(device, KedouNew_Strings.back).click();
 
 /*         //进入用户详情页面，     页面跳转，需要预留缓冲时间。     //右上角的选择项，目前在未登录的时候是直接跳转到主页。没有预留返回空间
@@ -118,7 +89,38 @@ public class KedouNew_unLogin {
             device.pressBack();*/
         }
     }
-        //首页，title下边的操作。  整体操作
+
+    private static void dataPage(UiDevice device) {
+        //选中个人详情页面，上下滑动，查看信息     这个页面内容比较多，需要缓冲时间
+        TestUse.sleep(StringUtils.THREESECOND);
+        //第三个参数：speed	int: The speed at which to perform this gesture in pixels per second.
+        TestUse.getUiObject2(device, KedouNew_Strings.scrollView).scroll(Direction.DOWN, 2f, 200);   //向上滑动;
+        TestUse.getUiObject2(device, KedouNew_Strings.details_list_img).scroll(Direction.UP, 5f, 200);   //向下滑动;
+        //点击个人资料页面  顶部的视频
+        TestUse.getUiObject2(device, KedouNew_Strings.head).click();
+        TestUse.sleep(StringUtils.TWENTYSECOND);
+        UiObject2 search_start = TestUse.getUiObject2(device, KedouNew_Strings.start);
+        if (search_start != null) {
+            //预留一些时间，查看视频
+            search_start.click();
+            TestUse.sleep(StringUtils.TWENTYSECOND);
+            device.pressBack();
+        }
+
+        //如果相册有图片，依次点击图片
+        UiObject2 searchPhoto = TestUse.getUiObject2(device, KedouNew_Strings.photo);
+        if (searchPhoto != null) {
+            searchPhoto.click();
+            TestUse.getUiObject2(device, KedouNew_Strings.rc_view_pager).scroll(Direction.LEFT, 6f, 200);
+            TestUse.getUiObject2(device, KedouNew_Strings.rc_view_pager).scroll(Direction.RIGHT, 6f, 200);
+            //如果有相册，就返回一次。返回个人资料页
+            TestUse.getUiObject2(device, KedouNew_Strings.back).click();
+        }
+        //点击个人资料页的返回按钮，返回首页
+        TestUse.getUiObject2(device, KedouNew_Strings.back).click();
+    }
+
+    //首页，title下边的操作。  整体操作
         public static void kedou_unLogin_front(UiDevice device) {
             //首页  向上滑动，向下滑动
             for (int i = 0; i < 3; i++) {
@@ -150,15 +152,33 @@ public class KedouNew_unLogin {
             TestUse.getUiObject2(device, KedouNew_Strings.viewpager).scroll(Direction.LEFT, 3f, 200);
           }
        //点击轮播图
-        List<UiObject2>  swiper_list= TestUse.getUiObject2s(device,KedouNew_Strings.viewpager);
-            for(UiObject2 ui2 : swiper_list){
-                ui2.click();
+            for(int i=0;i< 2;i++) {
+                TestUse.getUiObject2(device, KedouNew_Strings.viewpager).click();
                 TestUse.sleep(StringUtils.ONESECOND);
-                TestUse.getUiObject2(device,KedouNew_Strings.webView).scroll(Direction.DOWN, 3f, 200);
+                TestUse.getUiObject2(device, KedouNew_Strings.content).scroll(Direction.DOWN, 3f, 200);
                 TestUse.sleep(StringUtils.ONESECOND);
-                device.findObject(By.clazz(KedouNew_Strings.WebView)).scroll(Direction.UP, 4f, 200);
-                TestUse.getUiObject2(device,KedouNew_Strings.back).click();
+                TestUse.getUiObject2(device, KedouNew_Strings.back).click();
             }
       }
     }
+
+    //操作  “推荐”“新人”“活跃”列表
+    public static void kedou_unLogin_Lists(UiDevice device){
+        TestUse.getUiObject2(device,KedouNew_Strings.recommend).click();
+        recycleList(device);
+        TestUse.getUiObject2(device,KedouNew_Strings.active).click();
+        recycleList(device);
+        TestUse.getUiObject2(device,KedouNew_Strings.new_person).click();
+        recycleList(device);
+    }
+
+                //“推荐”“新人”“活跃”列表 的  刷新与进入页面点击操作。  局部页面的操作，被调用的方法
+                private static void recycleList(UiDevice device) {
+                    for (int i=0;i<3;i++) {
+                        TestUse.getUiObject2(device, KedouNew_Strings.recyclerview).scroll(Direction.UP, 3f, 200);
+                        TestUse.sleep(StringUtils.THREESECOND);
+                        TestUse.getUiObject2(device, KedouNew_Strings.icon).click();
+                        dataPage(device);
+                    }
+                }
 }
