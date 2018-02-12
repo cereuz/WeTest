@@ -74,6 +74,7 @@ public class KedouNew_unLogin {
             TestUse.getUiObject2(device, KedouNew_Strings.search_editText).setText(String.valueOf(KedouNew_Strings.kedouID_arr[i]));
             TestUse.sleep(StringUtils.ONESECOND);
             TestUse.getUiObject2(device, KedouNew_Strings.searchButton).click();
+            TestUse.sleep(StringUtils.TWOSECOND);
             TestUse.getUiObject2(device, KedouNew_Strings.icon).click();
 
             dataPage(device);

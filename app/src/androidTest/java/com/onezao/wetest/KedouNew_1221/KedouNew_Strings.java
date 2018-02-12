@@ -9,6 +9,16 @@ public class KedouNew_Strings {
     public static String KEDOUPACAKAGE = "com.gcs.mcj.chat";
     //定义指定的几个蝌蚪号
     public static int[]  kedouID_arr = {987212905,982077162,964082747,967983139,983882847,983441167,937611877};
+    //指定绑定QQ的手机号码
+    public static String QQ_PhoneNumber = "15058346809";
+    //指定绑定微信的手机号码
+    public static String weixin_PhoneNumber = "15058346808";
+
+    //定义指定的手机号
+    public static String[]  kedouPhone_arr = {"15058346804","15058346805","15058346806","15058346807","15058346808",
+            "15058346809","15058346811","15058346812","15058346813","15058346814","15058346815","15058346816","15058346817","15058346818",
+            "15058346819","15058346820","15058346821","15058346822","15058346823","15058346824","15058346825","15058346826","15058346827",
+            "15058346828","15058346829","15058346830","15058346831"};
     //【零】引导页
     public static String viewpager = "com.gcs.mcj.chat:id/viewpager";
     //【壹】首页   底部的tab栏目，一共四个
@@ -54,6 +64,26 @@ public class KedouNew_Strings {
     //登录注册页面
     //账号，输入手机号
     public static String et_phone = "com.gcs.mcj.chat:id/et_phone";
+    //验证码，图片验证码输入框
+    public static String et_code = "com.gcs.mcj.chat:id/et_code";
+    //图片验证码
+    public static String image_code = "com.gcs.mcj.chat:id/image_code";
+    //注册/登录按钮
+    public static String bt_login = "com.gcs.mcj.chat:id/bt_login";
+    //“获取 验证码”  按钮
+    public static String send_code = "com.gcs.mcj.chat:id/send_code";
+    //QQ登录按钮，微信登录按钮
+    public static String iv_login_qq = "com.gcs.mcj.chat:id/iv_login_qq";
+    public static String iv_login_wx = "com.gcs.mcj.chat:id/iv_login_wx";
+    //添加QQ账号界面
+    public static String account_qq = "com.tencent.mobileqq:id/account";
+    public static String password_qq = "com.tencent.mobileqq:id/password";
+    public static String weixin_account_password = "com.tencent.mm:id/hk";
+    public static String btn_weixin_login = "com.tencent.mm:id/bw7";
+
+    //弹框中，删除QQ的按钮
+    public static String dialogRightBtn = "com.tencent.mobileqq:id/dialogRightBtn";
+
 
     //【四】个人中心      的设置按钮
     public static String setting = "com.gcs.mcj.chat:id/setting";

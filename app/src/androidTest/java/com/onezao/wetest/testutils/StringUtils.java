@@ -14,6 +14,7 @@ public class StringUtils {
     public static int SIXSECOND = 6000;
     public static int TENSECOND = 10000;
     public static int TWENTYSECOND = 20000;
+    public static int SIXTYTWOSECOND = 62000;
     //设置随机数
     public static int SEED = 99999999;
 }

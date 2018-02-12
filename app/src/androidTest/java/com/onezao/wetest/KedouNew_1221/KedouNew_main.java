@@ -8,10 +8,10 @@ import android.support.test.uiautomator.UiDevice;
 
 public class KedouNew_main {
     public static void kedouNew_main_start(UiDevice device){
-/*        //启动APP
+        //启动APP
         KedouNew_unLogin.kedou_unLogin_start(device);
         //判断是否登录，如果已经登录，将帐户退出
-        KedouNew_Connect.quit(device);*/
+        KedouNew_Connect.quit(device);
 /*        //点击底部的四个tab栏
         KedouNew_unLogin.kedou_unLogin_tab(device);
         //顶部的title的控件操作
@@ -23,9 +23,14 @@ public class KedouNew_main {
         //轮播图的操作
         KedouNew_unLogin.kedou_unLogin_Swiper(device);
         //几个列表的操作
-        KedouNew_unLogin.kedou_unLogin_Lists(device);*/
-
-        KedouNew_LoginAndRigister.kedou_login_register(device);
-
+        KedouNew_unLogin.kedou_unLogin_Lists(device);
+        //登录注册功能，手机
+        KedouNew_LoginAndRigister.kedou_login_register_phone(device);*/
+       for(int p = 0;p<4;p++) {
+           // QQ登录注册
+           KedouNew_LoginAndRigister.kedou_login_register_QQ(device);
+           //微信注册登录
+           KedouNew_LoginAndRigister.kedou_login_register_weixin(device);
+       }
     }
 }

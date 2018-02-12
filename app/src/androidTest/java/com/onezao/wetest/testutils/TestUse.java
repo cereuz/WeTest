@@ -123,6 +123,29 @@ public class TestUse {
             return UiOb2;
         }
     }
+
+    //封装找到控件的方法
+    public static UiObject2 getUiObject2Text(UiDevice device,String resText) {
+        TestUse.sleep(TestUse.THREESECOND);
+        if(resText == null){
+            return null;
+        }  else {
+            UiObject2 UiOb2 = device.findObject(By.text(resText));
+            return UiOb2;
+        }
+    }
+
+    //封装找到控件的方法
+    public static UiObject2 getUiObject2Class(UiDevice device,String resClass) {
+        TestUse.sleep(TestUse.THREESECOND);
+        if(resClass == null){
+            return null;
+        }  else {
+            UiObject2 UiOb2 = device.findObject(By.clazz(resClass));
+            return UiOb2;
+        }
+    }
+
     //封装找到多个相同控件的方法
     public static List<UiObject2> getUiObject2s(UiDevice device,String resId) {
         TestUse.sleep(TestUse.THREESECOND);
