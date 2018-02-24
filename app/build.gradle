@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.onezao.wetest"
         minSdkVersion 17
@@ -28,23 +28,22 @@ dependencies {
     compile 'com.android.support:design:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
-    compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/espresso-contrib-2.2-release-no-dep.jar')
-    compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/espresso-core-2.2-release-no-dep.jar')
-    compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/espresso-idling-resource-2.2-release-no-dep.jar')
-    compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/espresso-intents-2.2-release-no-dep.jar')
-    compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/espresso-web-2.2-release-no-dep.jar')
-    compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/exposed-instrumentation-api-publish-0.3-release-no-dep.jar')
-    compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/guava-18.0.jar')
-    compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/hamcrest-core-1.3.jar')
-    compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/hamcrest-integration-1.3.jar')
-    compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/hamcrest-library-1.3.jar')
-    compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/javawriter-2.1.1.jar')
-    compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/javax.annotation-api-1.2.jar')
-    compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/javax.inject-1.jar')
-    compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/jsr305-2.0.1.jar')
-    compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/junit-4.12.jar')
-    compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/rules-0.3-release-no-dep.jar')
-    compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/runner-0.3-release-no-dep.jar')
-    compile files('E:/zhang/Java/android/Android/AndroidStudioProjects/MyTest/WeTest/libs/uiautomator-v18-2.1.1-release-no-dep.jar')
-    compile files('libs/spoon-client-1.7.1.jar')
+    implementation files('E:/java/java/GitHub/WeTest/libs/espresso-contrib-2.2-release-no-dep.jar')
+    implementation files('E:/java/java/GitHub/WeTest/libs/espresso-core-2.2-release-no-dep.jar')
+    implementation files('E:/java/java/GitHub/WeTest/libs/espresso-idling-resource-2.2-release-no-dep.jar')
+    implementation files('E:/java/java/GitHub/WeTest/libs/espresso-intents-2.2-release-no-dep.jar')
+    implementation files('E:/java/java/GitHub/WeTest/libs/espresso-web-2.2-release-no-dep.jar')
+    implementation files('E:/java/java/GitHub/WeTest/libs/exposed-instrumentation-api-publish-0.3-release-no-dep.jar')
+    implementation files('E:/java/java/GitHub/WeTest/libs/guava-18.0.jar')
+    implementation files('E:/java/java/GitHub/WeTest/libs/hamcrest-core-1.3.jar')
+    implementation files('E:/java/java/GitHub/WeTest/libs/hamcrest-integration-1.3.jar')
+    implementation files('E:/java/java/GitHub/WeTest/libs/hamcrest-library-1.3.jar')
+    implementation files('E:/java/java/GitHub/WeTest/libs/javawriter-2.1.1.jar')
+    implementation files('E:/java/java/GitHub/WeTest/libs/javax.annotation-api-1.2.jar')
+    implementation files('E:/java/java/GitHub/WeTest/libs/javax.inject-1.jar')
+    implementation files('E:/java/java/GitHub/WeTest/libs/jsr305-2.0.1.jar')
+    implementation files('E:/java/java/GitHub/WeTest/libs/junit-4.12.jar')
+    implementation files('E:/java/java/GitHub/WeTest/libs/rules-0.3-release-no-dep.jar')
+    implementation files('E:/java/java/GitHub/WeTest/libs/runner-0.3-release-no-dep.jar')
+    implementation files('E:/java/java/GitHub/WeTest/libs/uiautomator-v18-2.1.1-release-no-dep.jar')
 }
