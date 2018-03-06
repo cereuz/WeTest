@@ -86,7 +86,7 @@ public class KedouNew_LoginAndRigister {
         UiObject2  qq = device.findObject(By.text("3390693042"));
         if(qq != null){
             device.findObject(By.text("3390693042")).click();
-            device.findObject(By.text("登录")).click();
+//            device.findObject(By.text("登录")).click();    这里不需要点击登录，点击QQ号之后会自动登录
             //如果没有绑定，即没有输入手机号码框，就需要进行绑定号码操作
             TestUse.sleep(StringUtils.TWOSECOND);
             UiObject2  et_phone = TestUse.getUiObject2(device,KedouNew_Strings.et_phone);

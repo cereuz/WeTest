@@ -8,7 +8,7 @@ public class KedouNew_Strings {
     //kedouNew   的包名
     public static String KEDOUPACAKAGE = "com.gcs.mcj.chat";
     //定义指定的几个蝌蚪号
-    public static int[]  kedouID_arr = {987212905,982077162,964082747,967983139,983882847,983441167,937611877};
+    public static int[]  kedouID_arr = {933497229,955062962,924557751,988087999,939890756,929344061,948699051,943202220,987704813};
     //指定绑定QQ的手机号码
     public static String QQ_PhoneNumber = "15058346809";
     //指定绑定微信的手机号码
